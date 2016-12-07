@@ -61,7 +61,7 @@ class SolrSearchBackend(BaseSearchBackend):
         '''
         SolrSchemaAdmin singleton
         '''
-        return SolrSchemaAdmin(self.conn.url, self.conn.session)
+        return SolrSchemaAdmin(self.conn.url, self.conn.get_session())
 
     def update(self, index, iterable, commit=True):
         docs = []
